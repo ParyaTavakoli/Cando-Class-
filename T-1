@@ -1,0 +1,13 @@
+# با استفاده از گرافیک بنویسید که یک عدد بگیرد و یک فایل را انتخاب کنید و ان فایل انتخابی را بخواند
+from gooey import Gooey,GooeyParser
+@Gooey
+def main():
+    parser= GooeyParser(description="مثال")
+    parser.add_argument("number" , help="plez enter a number" , default="Number")
+    parser.add_argument("openFile" ,widget= ("FileChooser"), help="open a file" )
+    args=parser.parse_args()
+    
+    with open(args.openFile, 'r') as f:
+        var_read=f.read()
+        print=var_read
+main()
